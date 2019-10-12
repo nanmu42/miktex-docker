@@ -2,15 +2,13 @@
 
 This image allows you to run MiKTeX on any computer that supports Docker.
 
+This image is forked from https://github.com/MiKTeX/docker-miktex, with Chinese fonts and Makefile tools preinstalled.
+
 ## Obtaining the image
 
 Get the latest image from the registry:
 
-    docker pull miktex/miktex
-
-or build it yourself:
-
-    docker build --tag miktex/miktex .
+    docker pull nanmu42/miktex-docker
 
 ## Using the image
 
@@ -58,5 +56,5 @@ directory, you can run `pdflatex` as follows:
       -v $(pwd):/miktex/work \
       -e MIKTEX_GID=$(id -g) \
       -e MIKTEX_UID=$(id -u) \
-      miktex/miktex \
+      nanmu42/miktex-docker \
       pdflatex main.tex
